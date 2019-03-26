@@ -40,9 +40,8 @@ def login(request):
                 user_form.add_error(None, "Your username or password are incorrect")
     else:
         user_form = UserLoginForm()
-
-    args = {'user_form': user_form, 'next': request.GET.get('next', '')}
-    return render(request, 'login.html', args)
+    #args = {'user_form': user_form, 'next': request.GET.get('next', '')}
+    return render(request, 'login.html', {'user_form': user_form})
 
 
 @login_required
